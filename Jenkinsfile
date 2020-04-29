@@ -19,7 +19,7 @@ maven "Maven 3.6.3"}
     stages {
         stage ('git checkout') {
             steps {
-               git credentialsId: 'github',url: 'https://github.com/naveen3394/pdf_upload.git'
+               git credentialsId: 'github',url: 'https://github.com/GirishDeore/pdf_upload.git'
             }
         }
          stage ('Build') {
