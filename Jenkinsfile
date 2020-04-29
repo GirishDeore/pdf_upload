@@ -28,7 +28,7 @@ maven "Maven 3.6.3"}
               sh "mvn clean install"
             }
         }
-	*/
+	
         stage ('run') {
             steps {
                sshagent(['tomcat']) {
@@ -36,10 +36,16 @@ maven "Maven 3.6.3"}
 		   //        sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
 
 		}
-                 
-               //  sh ' java -jar target/*.jar'/
-        
+            }
+        }*/
+	     stage ('run with normal') {
+            steps {
+               
+ 		  sh 'scp -i /home/sunbeam/Downloads/girish_key_pairpem.pem target/*.jar ubuntu@13.233.229.40:~/'
+		   //        sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
             }
         }
+	    
+	    
         }
     }
