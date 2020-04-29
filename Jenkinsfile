@@ -22,12 +22,13 @@ maven "Maven 3.6.3"}
                git credentialsId: 'github',url: 'https://github.com/GirishDeore/pdf_upload.git'
             }
         }
-         stage ('Build') {
+       /*  stage ('Build') {
             steps {
               sh "mvn --version"
               sh "mvn clean install"
             }
         }
+	*/
         stage ('run') {
             steps {
                sshagent(['tomcat']) {
